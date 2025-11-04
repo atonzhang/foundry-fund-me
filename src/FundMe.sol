@@ -28,7 +28,7 @@ contract FundMe {
         _;
     }
 
-    function _onlyOwner() internal {
+    function _onlyOwner() internal view {
         if (msg.sender != i_owner) revert FundMe__NotOwner();
     }
 

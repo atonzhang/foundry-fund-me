@@ -88,8 +88,6 @@ contract FundMeTest is Test {
         uint160 numberOfFunders = 10;
         uint160 startingFunderIndex = 2 + USER_NUMBER;
 
-        uint256 originalFundMeBalance = address(fundMe).balance;
-
         for (uint160 i = startingFunderIndex; i < numberOfFunders; i++) {
             hoax(address(i), STARTING_USER_BALANCE);
             fundMe.fund{value: SEND_VALUE}();
@@ -101,9 +99,6 @@ contract FundMeTest is Test {
         vm.startPrank(fundMe.getOwner());
         fundMe.withdraw();
         vm.stopPrank();
-
-        uint256 endingFundMeBalance = address(fundMe).balance;
-        uint256 endingOwnerBalance = fundMe.getOwner().balance;
         
         assert(address(fundMe).balance == 0);
         assert(startingFundMeBalance + startingOwnerBalance == fundMe.getOwner().balance);
