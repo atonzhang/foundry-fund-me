@@ -1,3 +1,6 @@
+📍 **Sepolia 合约** → [0x2111...1908](https://sepolia.etherscan.io/address/0x211140a8809524cD8dfE3e2ed85D5d96e8441908)  
+📍 **Base 合约** → [0x0A2F...E0BA](https://sepolia.basescan.org/address/0x0A2F65f50DA5e32fd03569Cda7aF734d049FE0BA)  
+
 # Foundry Fund Me
 
 This is a minimal project allowing users to fund the contract owner with donations. The smart contract accepts ETH as donations, denominated in USD. Donations have a minimal USD value, otherwise they are rejected. The value is priced using a Chainlink price feed, and the smart contract keeps track of doners in case they are to be rewarded in the future.
